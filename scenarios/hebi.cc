@@ -87,20 +87,6 @@ main (int argc, char *argv[])
   routingHelper.AddOrigins("/video", nodes.Get(2));
   ndn::GlobalRoutingHelper::CalculateRoutes();
 
-  // // Consumer
-  // ndn::AppHelper consumerHelper ("ns3::ndn::ConsumerCbr");
-  // // Consumer will request /prefix/0, /prefix/1, ...
-  // consumerHelper.SetPrefix ("/prefix");
-  // consumerHelper.SetAttribute ("Frequency", StringValue ("10")); // 10 interests a second
-  // consumerHelper.Install (nodes.Get (0)); // first node
-  //
-  // // Producer
-  // ndn::AppHelper producerHelper ("ns3::ndn::Producer");
-  // // Producer will reply to all requests starting with /prefix
-  // producerHelper.SetPrefix ("/prefix");
-  // producerHelper.SetAttribute ("PayloadSize", StringValue("1024"));
-  // producerHelper.Install (nodes.Get (2)); // last node
-
   Simulator::Stop (Seconds (9.0));
 
   Simulator::Run ();
